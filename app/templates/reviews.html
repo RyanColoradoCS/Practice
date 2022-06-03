@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.classname.label }} 
+            {{ form.classname }}
+            {% for error in form.classname.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.review.label }}<br>
+            {{ form.review(size=32) }}<br>
+            {% for error in form.review.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.hoursPerWeek.label }}<br>
+            {{ form.hoursPerWeek(size=32) }}<br>
+            {% for error in form.hoursPerWeek.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.stars.label }} 
+            {{ form.stars }}
+            {% for error in form.stars.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <br>
+        <br>
+        <p>{{ form.submit() }}</p>
+    </form>
+
+    <br>
+    <h3>Course reviews</h3>
+    <div>
+    {% for dict_item in reviews %}
+    {% for key, value in dict_item.items() %}
+      <p>{{key}}: {{value}}</p>
+    {% endfor %}
+    {% endfor %}
+    </div>
+{% endblock %}
+

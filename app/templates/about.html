@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}About{% endblock %}
+
+{% block body %}
+<div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <div class="row about">
+          <img class="col-sm-4 img-responsive rounded-circle aboutimage" src="{{url_for('static', filename='#')}}" width="460" height="345">
+          <div class="col-sm-8 aboutpage">
+            <h1>CSPB Pathway Generator</h1>
+            <br>
+            <h4>CLASS PLANNER:</h4>
+            <p>Prospective/current students need class information to make a plan for finishing the program. They should have access to information that allowes them to take the courses they need, the electives that align with their interests, and those that are balanced against their work schedule.</p>
+            <br>
+            <h4>CLASS REVIEWER:</h4>
+            <p>For Prospective/current students to evaluate classes and check class reviews from other students.</p>
+            <br>
+            <br>
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}
